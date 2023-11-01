@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .outer{
+            float: right;
+            width: 80%;
+            height: 40px;
+            border: 1px solid black;
+
+        }
+        .inner{
+            margin: 2%;
+            width: 90%;
+            height: 90%;
+            border: 1px solid black;
+        }
+        .grid{
+            display:grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 10px;
+            margin-top: 8px;
+            margin-bottom: 8px;
+        }
+        .flex3{
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+        }
+        .container_flex{
+            background-color: black;
+            display: flex;
+            justify-content: space-between;
+            height:40px;
+            margin-bottom: 8px;
+            border: 3px solid rgb(15, 15, 15);
+            border-radius: 2%;
+        }
+        .container_flex2{
+            background-color: black;
+            display: flex;
+            text-align: center;
+            vertical-align: middle;
+            
+            border-radius: 2%;
+            justify-content: space-between;
+            gap: 5px;
+            align-items: center;
+        }
+        .container_flex2 > div{
+            color: rgb(243, 216, 182);
+            border: 2px solid rgb(0, 0, 0);
+            border-radius: 2%;
+            /* align-items: center; */
+            
+        
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container_flex">
+        <div class="container_flex2">
+            <div style="align-items: end;">
+            label 1
+            </div>
+            <div>
+                label 2
+            </div>
+            <div style="background-color: rgb(168, 23, 23); border-radius:42%; padding:4px;">
+                label 3
+            </div>
+        </div>
+        <div style="color: blue; position: relative; bottom: -10px; ">
+            Logo
+        </div>
+    </div>
+
+    <diV class="flex3">
+    <img src="../mario-von-rotz-xVa6avyi_y8-unsplash.jpg" style="width: 40px;height: 40px; border-radius: 50%;">
+    </diV>
+
+    <diV class="flex3">
+        <img src="../mario-von-rotz-xVa6avyi_y8-unsplash.jpg" style="width: 40px;height: 40px; border-radius: 50%;">
+        <img src="../mario-von-rotz-xVa6avyi_y8-unsplash.jpg" style="width: 40px;height: 40px; border-radius: 50%;">
+    </diV>
+
+    
+        <diV class="flex3">
+            <img src="../mario-von-rotz-xVa6avyi_y8-unsplash.jpg" style="width: 40px;height: 40px; border-radius: 50%;">
+            <img src="../mario-von-rotz-xVa6avyi_y8-unsplash.jpg" style="width: 40px;height: 40px; border-radius: 50%;">
+            <img src="../mario-von-rotz-xVa6avyi_y8-unsplash.jpg" style="width: 40px;height: 40px; border-radius: 50%;">
+        </diV>
+
+        <div class="grid">
+            <div style="background-color:rgb(180, 241, 241);">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus debitis id nostrum facilis, dolorem non mollitia provident consectetur beatae ab possimus cupiditate, magnam eum tenetur ratione velit a, rerum corporis!</div>
+            <div style="background-color: bisque;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus debitis id nostrum facilis, dolorem non mollitia provident consectetur beatae ab possimus cupiditate, magnam eum tenetur ratione velit a, rerum corporis!</div>
+        </div>
+
+        <div class="outer">
+            <div class="inner">
+                <div class="inner">
+                    <div style="height:100%  ; display:flex; align-items:center;  justify-content: center;">The End</div>
+                </div>
+            </div>
+        </div>
+
+
+
+</body>
+</html>
