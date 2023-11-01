@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .img{
+            height: 40px;
+            width: 40px;
+        }
+        .grid{
+            display: flex;
+            flex-wrap: wrap;
+            align-content: flex-start;
+            gap: 5px;
+        }
+        .img2{
+            object-fit: contain;
+            width: 40%;
+            
+        }
+        .email-box{
+            margin-top: 10px;
+            display: flex;
+            justify-content: space-between;
+            border-radius: 40px;
+            background-color: blueviolet;
+            width: 90%;
+            height: 40px;
+        }
+        .container{
+            margin: auto;
+            height: 100%;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            justify-content:end;
+            gap: 2%;
+        }
+    </style>
+</head>
+<body >
+    
+    <div style="background-color: rgb(25, 25, 26); height: 100%; width: 100%; color: antiquewhite;">
+        <div class="container">
+        <div style="padding-left: 5px;">
+            <h3>About me</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nulla at volutpat diam ut venenatis tellus. Sed id semper risus Nulla at volutpat diam ut venenatis tellus. Sed id semper risus</p>
+            <div> <img class="img" src="../mario-von-rotz-xVa6avyi_y8-unsplash.jpg">
+            <label>322323</label>
+            </div>
+            <div> <img class="img" src="../mario-von-rotz-xVa6avyi_y8-unsplash.jpg">
+                <label>email.com</label>
+            </div>
+            <div class="email-box">
+                <p style="padding-left: 10px;
+                display: flex; align-items: center;
+                ">Enter your email</p>
+                <div style="background-color: red; display: flex; align-items: center;
+                border-radius: 40px; width: 40%; justify-content: center;
+                ">
+                    Send
+                </div>
+            </div>
+            
+        </div>
+        <div>
+            <h3>Latest Tweet</h3>
+            <div style="display: grid; grid-template-columns: auto auto; gap: 6%;">
+               <div> <img class="img" src="../mario-von-rotz-xVa6avyi_y8-unsplash.jpg">
+               </div>
+               <div>
+                <label>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nulla at volutpat diam ut venenatis tellus. Sed id semper risus
+                </label>
+            </div>
+            </div>
+            <div style="display: grid; grid-template-columns: auto auto; gap: 6%;">
+                <div> <img class="img" src="../mario-von-rotz-xVa6avyi_y8-unsplash.jpg">
+                </div>
+                <div>
+                 <label>
+                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nulla at volutpat diam ut venenatis tellus. Sed id semper risus
+                 </label>
+             </div>
+             </div>
+             <div style="display: grid; grid-template-columns: auto auto; gap: 6%;">
+                <div> <img class="img" src="../mario-von-rotz-xVa6avyi_y8-unsplash.jpg">
+                </div>
+                <div>
+                 <label>
+                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nulla at volutpat diam ut venenatis tellus. Sed id semper risus
+                 </label>
+             </div>
+             </div>
+        </div>
+        <div>
+            <h3>Instgram</h3>
+            <div class="grid">
+                
+           <img class="img2" src="../mario-von-rotz-xVa6avyi_y8-unsplash.jpg">
+           <img class="img2" src="../mario-von-rotz-xVa6avyi_y8-unsplash.jpg">
+           <img class="img2" src="../mario-von-rotz-xVa6avyi_y8-unsplash.jpg">
+           <img class="img2" src="../mario-von-rotz-xVa6avyi_y8-unsplash.jpg">
+          
+        </div>
+        </div>
+    </div>
+    
+    <hr>
+    <div style="display: flex; justify-content: space-between;">
+        <div style="display: flex;
+        margin-left: 5px;
+        gap:10px;">
+            <label>Home</label>
+            <label>About</label>
+            <label>Our Works</label>
+            <label>Services</label>
+            <label>Blog</label>
+            <label>Contacts</label>
+
+        </div>
+        <div style="margin-right: 5px;">
+            <label>ColorLib</label>
+        </div>
+    </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+    
+</body>
+
+</html>
