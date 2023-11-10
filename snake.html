@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #game-board {
+            border: 1px solid #000;
+            position: relative;
+        }
+
+        .snake, .food {
+            width: 20px;
+            height: 20px;
+            position: absolute;
+        }
+
+        .snake {
+            background-color: #00f;
+        }
+
+        .food {
+            background-color: #f00;
+        }
+    </style>
+</head>
+<body>
+    <div id="game-board"></div>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            const boardSize = 20;
+            let snake = [{ x: 5, y: 5 }];
+            let direction = 'right';
+            let food = generateFood();
+
+            function generateFood() {
+                const x = Math.floor(Math.random() * boardSize);
+                const y = Math.floor(Math.random() * boardSize);
+                return { x, y };
+            }
+
+            function updateGame() {
+                // Update snake position
+                const head = Object.assign({}, snake[0]);
+                switch (direction) {
+                    case 'up':
+                        head.y--;
+                        break;
+                    case 'down':
+                        head.y++;
+                        break;
+                    case 'left':
+                        head.x--;
+                        break;
+                    case 'right':
+                        head.x++;
+                        break;
+                }
+
+                // Check for collisions with walls or itself
+                if (
+                    head.x < 0 || head.x >= boardSize ||
+                    head.y < 0 || head.y >= boardSize ||
+                    snake.some(segment => segment.x === head.x && segment.y === head.y)
+                ) {
+                    alert('Game over!');
+                    resetGame();
+                    return;
+                }
+
+                // Check for food
+                if (head.x === food.x && head.y === food.y) {
+                    // Increase the snake length
+                    snake.unshift(food);
+                    // Generate new food
+                    food = generateFood();
+                } else {
+                    // Move the snake
+                    snake.pop();
+                    snake.unshift(head);
+                }
+
+                // Update the game board
+                updateBoard();
+            }
+
+            function updateBoard() {
+                // Clear the board
+                $('#game-board').empty();
+
+                // Draw the snake
+                snake.forEach(segment => {
+                    const $segment = $('<div class="snake"></div>');
+                    $segment.css({
+                        top: segment.y * 20,
+                        left: segment.x * 20
+                    });
+                    $('#game-board').append($segment);
+                });
+
+                // Draw the food
+                const $food = $('<div class="food"></div>');
+                $food.css({
+                    top: food.y * 20,
+                    left: food.x * 20
+                });
+                $('#game-board').append($food);
+            }
+
+            function resetGame() {
+                snake = [{ x: 5, y: 5 }];
+                direction = 'right';
+                food = generateFood();
+                updateBoard();
+            }
+
+            // Set up keyboard controls
+            $(document).keydown(function(e) {
+                switch (e.key) {
+                    case 'ArrowUp':
+                        direction = 'up';
+                        break;
+                    case 'ArrowDown':
+                        direction = 'down';
+                        break;
+                    case 'ArrowLeft':
+                        direction = 'left';
+                        break;
+                    case 'ArrowRight':
+                        direction = 'right';
+                        break;
+                }
+            });
+
+            // Set up game loop
+            setInterval(updateGame, 200);
+        });
+    </script>
+</body>
+</html>

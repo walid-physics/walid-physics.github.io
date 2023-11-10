@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script>
+        function add(){
+            let color = $('#second-select').val();
+            let tag = $('#first-select').val();
+            let text = '';
+
+            let css_input = $('#css');
+            let html_input = $('#html');
+
+            if(!css_input.prop('checked') && !html_input.prop('checked')){
+                alert('please select text');
+            }
+
+            if(css_input.prop('checked')){
+                text = css_input.val();
+            }
+            else{
+                text = css_input.val();
+            }
+            let p = $('<'+tag+' style="color:'+color+'">'+text+'</'+tag+'>');
+            $('body').append(p);
+            
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <label>Select Tag: </label>
+        <select id="first-select">
+            <option value="label">label</option>
+            <option value="div">div</option>
+        </select>
+    </div>
+    <div>
+        <label>Select Text: </label>
+        <label>HTML</label> <input name="radio" value="html" id="html" type="radio">
+        <label>CSS</label> <input name="radio" value="css" id="css" type="radio">
+    </div>
+    <div>
+        <label>Select Color: </label>
+        <select id="second-select">
+            <option value="blue">blue</option>
+            <option value="green">green</option>
+        </select>
+    </div>
+    <br>    
+    <div>
+        <button onclick="add()">Add</button>
+    </div>
+
+</body>
+</html>

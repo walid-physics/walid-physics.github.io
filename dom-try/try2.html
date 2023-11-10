@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script>
+        function fun(){
+            let first = $('#1').val();
+            let second = $('#2').val();
+
+            let input = $('#3');
+
+            let third = $('#3').val();
+
+            let input2 = document.getElementById('3');
+
+            let sum = parseFloat(first) + parseFloat(second);
+
+            input.value = sum;
+
+            input2.value= sum;
+
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <label>First: </label>
+        <input id="1" type="text">
+        <label>Second: </label>
+        <input id="2" type="text">
+        <button onclick="fun()">Submit</button>
+        <br>
+        <label>Third: </label>
+        <input id="3" type="text">
+    </div>
+</body>
+</html>

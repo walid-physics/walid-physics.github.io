@@ -12,12 +12,15 @@
         .grid{
             display: flex;
             flex-wrap: wrap;
-            align-content: flex-start;
             gap: 5px;
+            align-content: flex-start;
+            height: 50%;
+            border: 2px solid blue;
+            object-fit: contain;
         }
         .img2{
-            object-fit: contain;
             width: 40%;
+            height: 50%;
             
         }
         .email-box{
@@ -46,11 +49,11 @@
         <div class="container">
         <div style="padding-left: 5px;">
             <h3>About me</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nulla at volutpat diam ut venenatis tellus. Sed id semper risus Nulla at volutpat diam ut venenatis tellus. Sed id semper risus</p>
-            <div> <img class="img" src="../mario-von-rotz-xVa6avyi_y8-unsplash.jpg">
+            <p style="margin-bottom:20px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nulla at volutpat diam ut venenatis tellus. Sed id semper risus Nulla at volutpat diam ut venenatis tellus. Sed id semper risus</p>
+            <div style="margin-bottom:20px;"> <img class="img" src="../mario-von-rotz-xVa6avyi_y8-unsplash.jpg">
             <label>322323</label>
             </div>
-            <div> <img class="img" src="../mario-von-rotz-xVa6avyi_y8-unsplash.jpg">
+            <div style="margin-bottom:20px;"> <img class="img" src="../mario-von-rotz-xVa6avyi_y8-unsplash.jpg">
                 <label>email.com</label>
             </div>
             <div class="email-box">
@@ -67,7 +70,7 @@
         </div>
         <div>
             <h3>Latest Tweet</h3>
-            <div style="display: grid; grid-template-columns: auto auto; gap: 6%;">
+            <div style="margin-bottom: 20px; display: grid; grid-template-columns: auto auto; gap: 6%;">
                <div> <img class="img" src="../mario-von-rotz-xVa6avyi_y8-unsplash.jpg">
                </div>
                <div>
@@ -76,7 +79,7 @@
                 </label>
             </div>
             </div>
-            <div style="display: grid; grid-template-columns: auto auto; gap: 6%;">
+            <div style="margin-bottom: 20px; display: grid; grid-template-columns: auto auto; gap: 6%;">
                 <div> <img class="img" src="../mario-von-rotz-xVa6avyi_y8-unsplash.jpg">
                 </div>
                 <div>
@@ -95,9 +98,11 @@
              </div>
              </div>
         </div>
-        <div>
+        <div
+
+        >
             <h3>Instgram</h3>
-            <div class="grid">
+        <div class="grid">
                 
            <img class="img2" src="../mario-von-rotz-xVa6avyi_y8-unsplash.jpg">
            <img class="img2" src="../mario-von-rotz-xVa6avyi_y8-unsplash.jpg">

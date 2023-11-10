@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{
+            visibility: visible;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script>
+        function display(){
+            let myP = document.querySelector('p');
+            myP.style.display = (myP.style.display == 'none') ? '' : 'none';
+        }
+        function changeDisplay(){
+            let inputText = document.querySelector('input#second');
+            inputText.style.visibility = (inputText.style.visibility === 'hidden') ? 'visible'
+            : 'hidden';
+        }
+    </script>
+</head>
+<body>
+    <div>Display</div>
+    <p>Bananas are yellow in color</p>
+    <button onclick="display()">Submit</button>
+    <div>Visibility</div>
+    <input id="second" type="text">
+    <input onclick="changeDisplay()" type="submit">
+</body>
+</html>

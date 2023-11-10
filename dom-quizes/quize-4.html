@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script>
+    let objectArray = [{Name:'Ram',Age:30,Skills:['java','javascript']},
+                    {Name:'Shyam',Age:20,Skills:['python','c']}]
+    
+    $('document').ready(function(){
+        let select = $('#select_id');
+        let html = '';
+        for(x in objectArray){
+            html += '<option id="'+x+'">'+objectArray[x].Name+'</option>';
+        }   
+        select.html(html);
+        //$('body').append(select);
+    })
+    function populate(){
+        let div = $('<div></div>');
+        let option1 = $('#0');
+        let option2 = $('#1');
+        
+        if(option1.prop('selected')){
+           console.log('correct');
+        }
+        if(option2.prop('selected')){
+            console.log('correct');
+            
+        }
+
+    }
+</script>
+<body>
+    <div>
+    <label>Select Student: </label>
+        <select id="select_id">
+            <option id="1" value="Shyam">Shyam</option>
+            <option id="0" value="Ram">Ram</option>
+        </select>
+        <button onclick="populate()">Populate</button>
+    </div>
+
+
+    
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script>
+        function add(){
+            let priceInput = $('#priceInput').val();
+            let quantityInput = $('#quantityInput').val();
+            let nameInput = $('#nameInput').val();
+
+            let newRow = $('<tr></tr>');
+            newRow.html(`
+            <td for="nameInput"> `+ nameInput +`</td>
+            <td for="priceInput">`+priceInput +`</td>
+            <td for="quantityInput">`+quantityInput +`</td>`);
+         
+            let table = $('tbody');
+            table.append(newRow);
+            
+
+            // let newRow = $('<tr></tr>')
+            // let html = '<td for="itemName">' + itemName + '</td><td for="itemPrice">'
+            //     + itemPrice + '</td><td for="itemQuantity">' + itemQuantity + '</td><td>'
+            //     + '<button onclick="editRow(this);">Edit</button></td><td>'
+            //     + '<button onclick="deleteRow(this);">Delete</button></td>';
+
+            // newRow.html(html);
+            // let table = $('#myTable');
+            // table.append(newRow);
+            
+
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <label>Name: </label>
+        <input id="nameInput">
+        <label>Price: </label>
+        <input id="priceInput">
+        <label>Quantity: </label>
+        <input id="quantityInput">
+        <button onclick="add()">Add</button>
+    </div>
+    <table id="myTable">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+        </tr>
+        </thead>
+        <tbody>
+            
+        </tbody>
+    </table>
+</body>
+</html>

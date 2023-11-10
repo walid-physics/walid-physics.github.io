@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script>
+        let list = [{ id: 2, fname: 'John', lname: 'Doe', img: '/images/chrysanthumum.jpeg' },
+        { id: 4, fname: 'Maharishi', lname: 'Mahesh', img: '/images/tulips.jpeg' },
+        { id: 3, fname: 'Arya', lname: 'Batt', img: '/images/longImage.jpeg' },
+        { id: 1, fname: 'Aakash', lname: 'Chatterji', img: '/images/jinnia.jpeg' }];
+        
+        let sortCol = 'id';
+        function sort(){
+            sortCol = (sortCol === 'id') ? 'fname' : 'id';
+
+            if(sortCol==='fname')
+                list.sort((o1,o2) => o1.fname.localeCompare(o2.fname));
+            else
+                list.sort((o1,o2) => o1.id - o2.id);
+            
+            let arr = $('.div');
+            $('.div').detach();
+            create(list);
+            //$('body').append(arr);
+        }
+        function create(){
+            let html = '';
+            for(x of list){
+                html += `<div class="div" style="display: flex; align-items: start;">
+                    <img style="object-fit: cover;width: 100px; height: 100px;" src="../mario-von-rotz-xVa6avyi_y8-unsplash.jpg">
+                    <div>
+                        <div>`+x.fname+`</div>
+                        <p>`+x.lname+`</p>
+                        <button onclick="delet(this)">Delete</button>
+                    </div>
+                </div>`
+            }
+            $('body').append(html);
+        }
+
+        function delet(som){
+            let b = $(som).parent().parent().remove();
+        }        
+    </script>
+</head>
+<body>
+    <button onclick="sort()">Sort</button>
+    <div class="div" style="display: flex; align-items: start;">
+        <img style="object-fit: cover;width: 100px; height: 100px;" src="../mario-von-rotz-xVa6avyi_y8-unsplash.jpg">
+        <div>
+            <div>Arya</div>
+            <p>Batt</p>
+            <button onclick="delet(this)">Delete</button>
+        </div>
+    </div>
+    <div class="div" style="display: flex; align-items: start;">
+        <img style="object-fit: cover;width: 100px; height: 100px;" src="../mario-von-rotz-xVa6avyi_y8-unsplash.jpg">
+        <div>
+            <div>John</div>
+            <p>Doe</p>
+            <button onclick="delet(this)">Delete</button>
+        </div>
+    </div>
+    <div class="div" style="display: flex; align-items: start;">
+        <img style="object-fit: cover;width: 100px; height: 100px;" src="../mario-von-rotz-xVa6avyi_y8-unsplash.jpg">
+        <div>
+            <div>Maharishi</div>
+            <p>Maharesh</p>
+            <button onclick="delet(this)">Delete</button>
+        </div>
+    </div>
+    <div class="div" style="display: flex; align-items: start;">
+        <img style="object-fit: cover;width: 100px; height: 100px;" src="../mario-von-rotz-xVa6avyi_y8-unsplash.jpg">
+        <div>
+            <div>Aakash</div>
+            <p>Chatterji</p>
+            <button onclick="delet(this)">Delete</button>
+        </div>
+    </div>
+</body>
+</html>

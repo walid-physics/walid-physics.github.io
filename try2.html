@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+    <script>
+        function changeColor(){
+            $('p').css('color','red').css('font-size','50px');
+        }
+
+        function fun(){
+            let p = $('<p> para </p>');
+            $('body').prepend(p);
+        }
+
+    </script>
+</head>
+<body>
+    <p>some text</p>
+    <button onclick="fun()">Add</button>
+    <button onclick="changeColor()" >color</button>
+    
+</body>
+</html>

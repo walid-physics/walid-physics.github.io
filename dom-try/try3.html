@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script>
+        let static_arr = [];
+        function fun(){
+            let div2 = $('.div1');
+            if(div2.length>0){
+                div2.detach();
+            }
+            let ele = document.getElementById('arr');
+            let val = ele.value;
+            let arr = [];
+            arr = val.split(',');
+
+            let div = $('<div class="div1"></div>');
+
+            let ul = $('<ul class="ul"></ul>');
+            let html = '';
+            for(x of arr){
+                html += '<li>'+x+'</li>'; 
+            }
+            let res = div.append(ul.html(html));
+            $('body').append(res);
+            static_arr = arr;
+        }
+        function filter(){
+            $('.div1').detach();
+            arr = static_arr.filter((y) => y.startsWith('a'));
+
+            let div = $('<div class="div1"></div>');
+
+            let ul = $('<ul></ul>');
+            let html = '';
+            for(x of arr){
+                html += '<li>'+x+'</li>'; 
+            }
+            let res = div.append(ul.html(html));
+            $('body').append(res);
+
+        }
+
+    </script>
+</head>
+<body>
+    <input id="arr">
+    <button onclick="fun()">button</button>
+    <button onclick="filter()">Filter</button>
+</body>
+</html>

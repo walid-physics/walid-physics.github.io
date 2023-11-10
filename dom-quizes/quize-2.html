@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script>
+        let obj = [{ humidity: 20, speed: 30 }, { humidity: 10, speed: 40 }];
+        
+
+        function fun(){
+            $('#div').detach();
+            let arr = [];
+            let div = $('<div id="div"></div>');
+            if($('#1').prop('selected')){
+                arr.push($('#1').val());
+            }
+            if($('#2').prop('selected')){
+                arr.push($('#2').val());
+            }
+            let html = '';
+            for(x of obj){
+                for(i of arr){
+                    html += '<p>'+i+': </p> <input value="'+x[i]+'"></input>';
+                }
+            }
+            let res = div.html(html);
+            $('body').append(res);
+        }
+
+    </script>
+</head>
+<body>
+    <select multiple>
+        <option id="1" value="speed">Speed</option>
+        <option id="2" value="humidity">Humidity</option>
+    </select>
+    <button onclick="fun()">Submit</button>
+</body>
+</html>
